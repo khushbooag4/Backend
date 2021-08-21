@@ -2,6 +2,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose')
 const User =  require('../models/User')
 
+//Authentication with Passport.js
 module.exports = function(passport){
     passport.use(new GoogleStrategy({
           clientID: '392031116277-44dc5ck6vtqpc9205iq0652tag7sttso.apps.googleusercontent.com',
@@ -9,13 +10,13 @@ module.exports = function(passport){
           callbackURL: 'http://localhost:5000/auth/google/callback'
 },
    async(accessToken, refreshToken, profile,done) =>{
-    // console.log(profile) Printing the profile data
+   // console.log(profile) Printing the profile data
     const newUser = {
         googleId: profile.id,
         displayName: profile.displayName,
         image: profile.photos[0].value
     }
-    //Save Profile Data in the DATABASE
+  //Save Profile Data in the DATABASE
        try {
            let user= await User.findOne({googleId:profile.id})
            if(user){
@@ -30,7 +31,7 @@ module.exports = function(passport){
        }
 }
     ))
-
+//Identify user already login or not
     passport.serializeUser(function(user,done){
         done(null,user.id)
     })
