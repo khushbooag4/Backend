@@ -1,0 +1,81 @@
+/* This is the StyleSheet */
+*{
+  box-sizing: border-box;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+  margin: 20px;
+  height: 400px;
+  width: 650px;
+  color: black;
+  background: #02B290;
+  position: relative;
+}
+.btn{
+  margin-top: 10px;
+  border-radius: 3px;
+  height: 50px;
+  width: 200px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.quote-text .quote{
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+}
+.quote-text p{
+  color: rgba(0, 0, 0, 0.911);
+  padding-top: 320px;
+  font-weight: 600;
+  font-family: 'Roboto' , sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: flex-end
+}
+/*Login Page*/
+.container{
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0e4980;
+  border-radius: 5px;
+  border-top: 30%;
+  height: 300px;
+  width: 400px;
+}
+.fa-heart,.fa-share-alt{
+  font-size: 2rem;
+  
+}
+.like-btn{
+  cursor: pointer;
+  color: #fff;
+  background: #FF6263;
+transition: transform .4s ease-in-out;
+border-radius: 5px;
+}
+.like-fill{
+  transform: scale(5px);
+  background: #B9345A;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+/*generate button*/
+.gen{
+  font-size: 1rem;
+
+}
+/*Login Button*/
+.log{
+  width: 300px;
+}

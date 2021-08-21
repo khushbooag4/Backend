@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <link rel="stylesheet" href="/styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Main Page</title>
+</head>
+<body>
+    <div class="main">
+        
+            {{!-- //Introduction --}}
+            <div class="username">
+                <h1 class="heading mt-4" >Welcome {{nameUser}}</h1>
+            </div>
+            {{!-- Quote Card --}}
+            <div class="container-dash">
+            <div class="quote-text card">
+                 <div id="quote" class="quote"></div>
+                 <p id='author'></p>
+                 
+            </div>
+           <div class="grid">
+                 <button class="like-btn btn"><i class="far fa-heart" onClick="toggle(this)">  Like</i></button>
+                <button id="btn" class="gen btn btn-primary">Generate Random Quote</button>
+            </div>
+            <div class="logout">
+                 <a href="/auth/logout" class="btn btn-dark">Logout</a>
+            </div>
+        
+    </div>
+    <script>
+    const quoteButton = document.getElementById('btn')
+    const quotetext=document.getElementById('quote');
+    const quoteAuthor=document.getElementById('author')
+    const apiUrl = 'https://api.quotable.io/random';
+    function getQuote(){
+        fetch(apiUrl).then(response => response.json())
+        .then(data => {
+            quotetext.textContent = `"${data.content}"`;
+            quoteAuthor.textContent=` ~ ${data.author}`;
+        });
+    }
+    
+    quoteButton.addEventListener('click',() => {
+        console.log('Button Clicked')
+        getQuote();
+    })
+  function toggle(x){
+x.classList.toggle("fas")
+  }
+    
+
+ 
+    </script>
+</body>
+</html> 
