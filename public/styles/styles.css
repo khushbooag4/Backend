@@ -8,6 +8,7 @@ div{
     justify-content: center;
     align-items: center;
 }
+/*Login Card*/
 .card{
   margin: 20px;
   height: 400px;
@@ -24,6 +25,8 @@ div{
   font-weight: 600;
   font-size: 1.5rem;
 }
+
+/*Quote*/
 .quote-text .quote{
   color: #fff;
   font-size: 2rem;
@@ -40,6 +43,7 @@ div{
   display: flex;
   align-items: flex-end
 }
+
 /*Login Page*/
 .container{
   align-items: center;
@@ -50,10 +54,12 @@ div{
   height: 300px;
   width: 400px;
 }
+
+/*Like Button*/
 .fa-heart,.fa-share-alt{
-  font-size: 2rem;
-  
+  font-size: 2rem; 
 }
+
 .like-btn{
   cursor: pointer;
   color: #fff;
@@ -70,11 +76,13 @@ border-radius: 5px;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
 /*generate button*/
 .gen{
   font-size: 1rem;
 
 }
+
 /*Login Button*/
 .log{
   width: 300px;
